@@ -22,3 +22,7 @@ _complete_ssh_hosts ()
         return 0
 }
 complete -F _complete_ssh_hosts ssh
+
+function curltime() {
+    curl -w "\ttime_namelookup:\t%{time_namelookup}\n\ttime_connect:\t\t%{time_connect}\n\ttime_appconnect:\t%{time_appconnect}\n\ttime_pretransfer:\t%{time_pretransfer}\n\ttime_redirect:\t\t%{time_redirect}\n\ttime_starttransfer:\t%{time_starttransfer}\n\t----------\n\ttime_total:\t\t%{time_total}\n"  -o /dev/null -s "$1"
+}
