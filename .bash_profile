@@ -2,6 +2,8 @@ if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 
+export HISTCONTROL=ignorespace
+
 alias ssh-keygen='ssh-keygen -o -a 100 -t ed25519 -C ""'
 
 _complete_ssh_hosts ()
